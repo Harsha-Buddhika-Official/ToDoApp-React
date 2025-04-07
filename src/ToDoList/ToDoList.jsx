@@ -14,8 +14,11 @@ function ToDoList(){
             setEvents(a => [...a, adding]);
         }
     }
-    function removeEventsToList(indexToRemove){
-        setEvents(events.filter((_, index) => index !== indexToRemove));
+    function removeEvents(indexToRemove){
+        setEvents(events.filter((_, i) => i !== indexToRemove));
+    }
+    function editEvents(){
+        
     }
 
     return(
@@ -23,8 +26,8 @@ function ToDoList(){
             <h2 className="hedding">To Do List</h2>
             <ul className="list">
                 {events.map((event, index) => <li key={index} >{event}
-                            <button onClick={() => removeEventsToList(index)} > Remove </button> 
-                            <button> Edit </button>
+                            <button onClick={() => removeEvents(index)} > Remove </button> 
+                            <button onClick={() => editEvents (index)}> Edit </button>
                             </li>)}
             </ul>
             <input type="text" id="addEvents" placeholder="Add Your Events" className="textAdd"/>
