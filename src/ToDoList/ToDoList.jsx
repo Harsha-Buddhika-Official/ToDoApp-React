@@ -2,7 +2,7 @@ import react, {useState} from 'react';
 import './ToDoList.css'
 
 function ToDoList(){
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(["hello","hi","how are you"]);
     
     function addTasks(){
         const adding = document.getElementById("addTasks").value;
@@ -17,8 +17,11 @@ function ToDoList(){
     function removeTasks(indexToRemove){
         setTasks(tasks.filter((_, index) => index !== indexToRemove)); //_ is not used parameter(elements)
     }
-    function editTasks(){
-        setTasks();
+    function editTasks(index){
+        let newTask = prompt('Edit the task Here');
+        const updatedTasks = [...tasks];
+        updatedTasks[index] = newTask;
+        setTasks(updatedTasks);
     }
 
     return(
