@@ -187,3 +187,16 @@ body {
 .list li {
     padding-right: 8px;
 }
+
+/* List.css */
+.list-item {
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .done {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
